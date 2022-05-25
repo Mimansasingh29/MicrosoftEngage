@@ -228,6 +228,25 @@ if selected == 'Price Analysis':
 if selected == 'Other Specifications':
     col1, col2 = st.columns( [0.9, 0.1])
     with col1:
+        #relation between components of company cars
+        st.header('3D plots for some parameters')
+        st.write('Between Airbags, Cylinders and Seating capacity')
+        plt.figure()
+        fig= px.scatter_3d(df, x='Number_of_Airbags', z='Seating_Capacity', y='Cylinders',color='Make',width=800,height=750)
+        fig.update_layout(showlegend=True)
+        plt.savefig('graph1.png')
+        st.plotly_chart(fig)
+
+        st.write('Between dimension of car body')
+        plt.figure()
+        fig= px.scatter_3d(df, x='Length', z='Width', y='Height',color='Make',width=800,height=750)
+        fig.update_layout(scene = dict(
+        xaxis = dict(range=[3000,6000],),
+                     yaxis = dict(range=[1000,2000],),
+                     zaxis = dict(range=[1200,2000],),),showlegend=True)
+        plt.savefig("graph.png")
+        st.plotly_chart(fig)
+
         st.header('Coorelation between different parameters')
         fig = plt.figure(figsize=(22,14))
         sns.heatmap(df.corr(), annot=True, fmt='.2%', cmap= "PiYG")
