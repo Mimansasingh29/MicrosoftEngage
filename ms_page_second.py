@@ -35,6 +35,11 @@ with st.sidebar:
     }
     )
 
+#replacing null value in Make with first name of model from a column named splitted model name
+df.insert(loc=1,
+          column='splitted_model',
+          value= df["Model"].apply(lambda x: x.split()[0]))
+df["Make"].fillna(df["splitted_model"], inplace = True)
 #dropping null values of useful columns 
 df = df.dropna(subset=['Width', 'Height', 'Wheelbase', 'Fuel_Tank_Capacity', 'Seating_Capacity', 'Torque', 'Drivetrain', 'Doors', 'Seating_Capacity', 'Number_of_Airbags','Cylinders', 'Displacement'])
 #cleaning data
@@ -45,7 +50,6 @@ df["Width"] = df["Width"].astype(str).apply(lambda x: x.replace(' mm','')).astyp
 df["Wheelbase"] = df["Wheelbase"].astype(str).apply(lambda x: x.replace(' mm','')).astype(float)
 df['Fuel_Tank_Capacity'] = df['Fuel_Tank_Capacity'].astype(str).apply(lambda x: x.replace(' litres','')).astype(float)
 df["Displacement"] = df["Displacement"].astype(str).apply(lambda x: x.replace(' cc','')).astype(float)
-
 df['Number_of_Airbags'] = df['Number_of_Airbags'].fillna(0)
 #dropping null values and converting it to integer
 df['Doors'] = df['Doors'].astype(int)
@@ -58,8 +62,6 @@ df.loc[df.ARAI_Certified_Mileage == '9.8-10.0 km/litre','ARAI_Certified_Mileage'
 df.loc[df.ARAI_Certified_Mileage == '10kmpl km/litre','ARAI_Certified_Mileage'] = '10'
 df.loc[df.ARAI_Certified_Mileage == '22.4-21.9 km/litre', 'ARAI_Certified_Mileage'] = '22'
 df['ARAI_Certified_Mileage'] = df['ARAI_Certified_Mileage'].dropna().astype(str).apply(lambda x: x.replace(' km/litre','')) .astype(float) 
-
-
 HP = df.Power.str.extract(r'(\d{1,4}).*').astype(int) * 0.98632
 HP = HP.apply(lambda x: round(x,2))
 TQ = df.Torque.dropna().str.extract(r'(\d{1,4}).*').astype(int)
@@ -68,6 +70,7 @@ df.Torque = TQ
 df.Power = HP
 #cleaning data
 
+#plotting graphs
 if selected == "Customer Segment":
     col1, col2 = st.columns( [0.9, 0.1])
     with col1:
@@ -76,7 +79,6 @@ if selected == "Customer Segment":
         for make in df['Make'].unique():
             dic[make] = sum(df['Make']==make)
             car_statistics = sorted(dic.items(), key=lambda x: x[1], reverse=True)[:20]
-
         fig = plt.figure(figsize=(20,12))
         plt.bar(range(len(car_statistics)), [val[1] for val in car_statistics], align='center')
         plt.xticks(range(len(car_statistics)), [val[0] for val in car_statistics])
@@ -87,7 +89,6 @@ if selected == "Customer Segment":
         plt.title('Car count vs company', fontsize=40)
         plt.grid()
         st.pyplot(fig)
-
         st.write('The above graph represents the number of cars each companies make. It can be intepreted that Maruti Suzuki manufactures most number of cars followed by Hyundai and so on.', fontsize = 30)
 
         #plotting graph between car count vs price
@@ -101,7 +102,6 @@ if selected == "Customer Segment":
         plt.xlim(0, 5000000)
         plt.grid()
         st.pyplot(fig)
-
         st.write('The above graph shows car price data i.e., number of cars in the market with respect to price.', fontsize=30)
 
 
@@ -112,7 +112,6 @@ if selected == "Car Specification":
         dic1 = {}
         for displacement in df['Displacement'].unique():
             dic1[displacement] = sum(df['Displacement']==displacement)
-
         displacement = sorted(dic1.items(), key=lambda x: x[1], reverse=True)[:15]
         #plotting bar graph for number of cars vs engine type (displacement)
         fig = plt.figure(figsize=(16,12))
@@ -124,7 +123,6 @@ if selected == "Car Specification":
         plt.xlabel('Displacement(in cc)', fontsize=25)
         st.pyplot(fig)
     
-
         st.header('Fuel Type')
         fig = plt.figure(figsize=(14,8))
         fuel_type = df['Fuel_Type'].unique()
@@ -138,7 +136,6 @@ if selected == "Car Specification":
         plt.grid()
         st.pyplot(fig)
 
-
         fig = plt.figure(figsize=(14,8))
         tank_capacity= df['Fuel_Tank_Capacity']
         fuel_type = df['Fuel_Type']
@@ -147,7 +144,6 @@ if selected == "Car Specification":
         plt.xticks(fontsize=18, rotation=300)
         plt.bar( fuel_type, tank_capacity, color = 'salmon')
         st.pyplot(fig)
-
 
         st.header('Mileage')
         fig= plt.figure(figsize=(14,8))
@@ -161,19 +157,14 @@ if selected == "Car Specification":
         plt.plot(car_count,  linestyle='none', marker='o')
         st.pyplot(fig)
 
-
         st.header('Drivetrain')
         fig = plt.figure(figsize=(14,8))
         drivetrain = df["Drivetrain"].unique()
         number_of_cars = df['Drivetrain'].value_counts()
-        # Creating autocpt arguments
-        def func(pct, allvalues):
-            absolute = int(pct / 100.*np.sum(allvalues))
-            return "{:.1f}%\n({:d})".format(pct, absolute)
-        ex = (0.1, 0.0, 0.2, 0.3)
-        plt.pie(number_of_cars, explode=ex, autopct = lambda pct: func(pct, number_of_cars), shadow = True, labels=drivetrain)
-        st.pyplot(fig)
-
+        fig = px.pie(drivetrain, values =number_of_cars, names= drivetrain)
+        fig.update_layout(
+        title="<b>Drivetrain relation with car counts</b>")
+        st.plotly_chart(fig)
 
         st.header('Body Type')
         fig = plt.figure(figsize=(14,8))
@@ -182,8 +173,6 @@ if selected == "Car Specification":
         plt.xticks(fontsize=18)
         plt.yticks(fontsize=18)
         st.pyplot(fig)
-
-
     st.write('The following graphs gives the detailed analysis about cars. The factors which are mainly responsible for decision of users are represented in these graphs. Starting with engine type, fuel type, Mileage, users can easily analyse to know about different cars.')
 
 
