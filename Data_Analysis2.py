@@ -155,16 +155,18 @@ def analysis(df):
             st.pyplot(fig)
             st.write('This shows that cars with petrol fuel type is the most number of cars produced followed by CNG and number of cars with CNG+Petrol is only 2. Also, Petrol cars and diesel cars has same and highest tank capacity.', fontsize=30)
 
-            #plotting graph between mileage and car count
+             #plotting graph between mileage and car count
             st.header('Car Potential Analysis')
             fig=plt.figure(figsize=(14,8))
             car_count = df['ARAI_Certified_Mileage'].value_counts()
             plt.xlim(0 , 35)
-            plt.ylabel('Car count')
-            plt.xlabel('Mileage')
-            sns.histplot(data=df, x='ARAI_Certified_Mileage',bins=1000,alpha=.6, color='turquoise')
+            plt.ylabel('Car count', fontsize=20)
+            plt.xlabel('Mileage', fontsize=20)
+            plt.yticks(fontsize= 18)
+            plt.xticks(fontsize= 18)
+            sns.histplot(data=df, x='ARAI_Certified_Mileage',bins=1000,alpha=.6, color='purple')
             st.pyplot(fig)
-            st.write('.......................................................................', fontsize=30)
+            st.write('The graph shows number of cars produced with increasing mileage. It is visible that mileage with average value between 15-20 has highest number of cars', fontsize=30)
 
             #plotting pie graph for drivetrain analysis
             st.header('Drivetrain Analysis')
