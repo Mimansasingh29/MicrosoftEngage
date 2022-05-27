@@ -77,24 +77,46 @@
   
 ## Analysis
 1. Bar Graph representing number of cars companies manufacture
-   ![download](https://user-images.githubusercontent.com/76276453/170680067-f3aedd29-2ae7-      4fdb-b4dc-016993c95b35.png)
+   ![03c9e724f34b9e1ef48f933070948c9eb674f8b69e13eeef2ad71e65](https://user-images.githubusercontent.com/76276453/170681367-712f862b-9a0d-4700-98cf-47c23e015aea.png)
 
 2. Histogram showing the variation of number of cars with price
-   ![download](https://user-images.githubusercontent.com/76276453/170680281-eab73b13-46be-4941-922f-cefe7ce96834.png)
+   ![068ae77f651ff85e50bdf260b72fd43452cf000f4a8f99ef354ee8ce](https://user-images.githubusercontent.com/76276453/170681425-89f6e03a-e4aa-4a55-9c87-101822d2bc23.png)
    
 3. Bar Graph showing displacement relation with the car count present
-   ![download](https://user-images.githubusercontent.com/76276453/170680477-41a357fe-59ed-40af-93bd-272d22229af4.png)
+   ![e866a376ff0abf63baeac8bacbe55fb0e32d6e0c18d2331f27e9ff0b](https://user-images.githubusercontent.com/76276453/170681513-6b928824-9b05-4a67-bd04-c05ecb42bc7f.png)
 
 4. Line Chart for car count on the basis of fuel type
-   ![download](https://user-images.githubusercontent.com/76276453/170680542-f08ea6b9-37e8-4cc9-  a360-68b33426090a.png)
+   ![faec3245f2ec6972234700de37c56657bfe7422b803dc51ebd6e417a](https://user-images.githubusercontent.com/76276453/170681559-c8150e9a-3f46-41c1-b274-8d53038d63ed.png)
 
 5. Bar Graph for Tank Capacity of cars with different fuel type
-   ![download](https://user-images.githubusercontent.com/76276453/170680715-67cfdb48-6d0b-4f63-9541-415c2979d69f.png)
+   ![074b4c91fc30a00609260454e1b8c9f81e10c74b45e010357a762c3b](https://user-images.githubusercontent.com/76276453/170681593-650383ce-4174-4cd1-9328-8175972f7d71.png)
 
-6. 
+6. Histogram for Mileage relation with the number of cars 
+   ![3c864c9e1ec0aed1b326dfe5734659c6448010c109b63776b1af7bb4](https://user-images.githubusercontent.com/76276453/170681701-86beaa18-5d52-47ae-a298-34018a5af6ed.png)
 
+7. Pie Graph for Drivetrain where value represents number of cars
+   ![newplot](https://user-images.githubusercontent.com/76276453/170682711-79ac638f-6bf2-4a96-88c5-8c34255817b0.png)
+   
+8. Horizontal bar graph for body type
+   ![ccf529d4d40440be0700e99fe8fbbff472a21675c0ee2dab45819adc](https://user-images.githubusercontent.com/76276453/170682882-30bc9221-93f3-4c77-a3af-481fa94dfe02.png)
 
+9. Scatter plot for price and displacement analysis'
+   ![fb1ee59556ecc54d654b7b1a1ecb8ed613dad8ba8da9da0d241474f4](https://user-images.githubusercontent.com/76276453/170682987-4e75b1b3-00f8-4930-8fbc-0ac619e38128.png)
 
+10. Scatter plot for Mileage and price realtion
+    ![c2812e22fe786b11e0c5133ab312f81714cf38c7f1657b4acd8ada02](https://user-images.githubusercontent.com/76276453/170683140-0834b166-f1c2-4f44-b6dc-336bada4925f.png)
+
+11. Bar graph for variation of price with body type
+    ![db2d08528d434f8d2c77a0e716dbce04cbd2b67096c4a1b80a067327](https://user-images.githubusercontent.com/76276453/170683242-1c786f1c-e85f-44f5-ae4f-bc25c914ad7d.png)
+
+12. 3D graph to show data of number of airbags, seating capacity and number of cylinders for different models
+    ![newplot (3)](https://user-images.githubusercontent.com/76276453/170683734-e32d4f02-d2c1-4703-9fe1-25fa14574d1d.png)
+
+13. 3D graph for data analysis of dimension of cars 
+    ![newplot (4)](https://user-images.githubusercontent.com/76276453/170683868-c31811ef-bcdb-4a79-ad0d-edab26d20873.png)
+
+14. Coorelation Map for relation between different parameters
+    ![fb990f62143e32e522f8fa06e6e14743491411836fab4c544e3b0582](https://user-images.githubusercontent.com/76276453/170683998-2c99cdf9-9503-4d81-a6af-5855dc9eed4e.png)
 
 
 
