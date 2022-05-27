@@ -62,18 +62,18 @@
 
 
 ## Data Analysis
-###### Several steps used for analysis are as follows:
+Several steps used for analysis are as follows:
 1. Importing Libraries
 2. Dealing with Missing Values
 3. Data Cleaning
 4. Explorayory Data Analysis
 
 ## Importing Libraries
-##### import pandas as pd
-##### import numpy as np
-##### import matplotlib.pyplot as plt
-##### import seaborn as sns
-##### import plotly.express as px
+import pandas as pd  
+import numpy as np  
+import matplotlib.pyplot as plt  
+import seaborn as sns  
+import plotly.express as px  
   
 ## Analysis
 1. Bar Graph representing number of cars companies manufacture
@@ -122,8 +122,8 @@
 This app is a generic app which can analyse any type of data provided with some restriction to the columns present in dataset. It uses different python libraries to analyse the data, clean and store it to make different types of graph which will help the user to analyse dataset. A total of 14 graphs is displayed in the app, each representing different parameters and relations, 'number of cars' and 'price' becoming the most important factor. 
 
 ## Installation
-###### pip install streamlit
-###### pip install streamlit-option-menu
+pip install streamlit  
+pip install streamlit-option-menu  
 
 ## To run the app in local system
 1. Clone the GitHub repository into your local device and move into the directory.
