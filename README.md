@@ -47,12 +47,10 @@
 
 
 * **CAR SPECIFICATION SEGMENT**
-![Screenshot (80)](https://user-images.githubusercontent.com/76276453/170675030-7caed13b-7668-4d1d-b2df-22c12ca7e521.png)
 ![Screenshot (82)](https://user-images.githubusercontent.com/76276453/170675072-ed66a5e9-24f7-42cc-8d04-317ca287e07a.png)
 
 
 * **PRICE ANALYSIS SEGMENT**
-![Screenshot (84)](https://user-images.githubusercontent.com/76276453/170675124-da8ca55a-7c1d-495c-9a01-65780376b8a6.png)
 ![Screenshot (86)](https://user-images.githubusercontent.com/76276453/170675148-76b64d04-7177-40a6-b421-1d1139bea5b0.png)
 
 
