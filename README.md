@@ -69,11 +69,11 @@
 4. Explorayory Data Analysis
 
 ## Importing Libraries
-  import pandas as pd
-  import numpy as np
-  import math
-  import matplotlib.pyplot as plt
-  import seaborn as sns
+######## import pandas as pd
+######## import numpy as np
+######## import matplotlib.pyplot as plt
+######## import seaborn as sns
+######## import plotly.express as px
   
 ## Analysis
 1. Bar Graph representing number of cars companies manufacture
@@ -118,6 +118,18 @@
 14. Coorelation Map for relation between different parameters
     ![fb990f62143e32e522f8fa06e6e14743491411836fab4c544e3b0582](https://user-images.githubusercontent.com/76276453/170683998-2c99cdf9-9503-4d81-a6af-5855dc9eed4e.png)
 
+## Conclusion
+This app is a generic app which can analyse any type of data provided with some restriction to the columns present in dataset. It uses different python libraries to analyse the data, clean and store it to make different types of graph which will help the user to analyse dataset. A total of 14 graphs is displayed in the app, each representing different parameters and relations, 'number of cars' and 'price' becoming the most important factor. 
+
+## Installation
+########## pip install streamlit
+########## pip install streamlit-option-menu
+
+## To run the app in local system
+1. Clone the GitHub repository into your local device and move into the directory.
+2. Open the anaconda terminal:
+   cd <directory path> <enter>
+   streamlit run <File name.py> <enter>
 
 
 
