@@ -126,6 +126,7 @@ pip install streamlit-option-menu
 ## To run the app in local system
 1. Open the anaconda terminal:
 2. Clone the GitHub repository into your local device and move into the directory.
+
    cd <directory path> <enter>
    streamlit run <File name.py> <enter>
  
