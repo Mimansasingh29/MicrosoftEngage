@@ -51,6 +51,9 @@ Several steps used for analysis are as follows:
 * Analyse the data and displays different graphs.
 
 ## Analysis
+
+* Main factors represented in the analysis is price variation and number of cars variation as both are most important factors. Number of cars variation with different factors will represent which car is famous among customer and most manufactured by any company.  
+
 1. Bar Graph representing number of cars companies manufacture
    ![03c9e724f34b9e1ef48f933070948c9eb674f8b69e13eeef2ad71e65](https://user-images.githubusercontent.com/76276453/170681367-712f862b-9a0d-4700-98cf-47c23e015aea.png)
 
