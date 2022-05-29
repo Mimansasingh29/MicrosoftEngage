@@ -11,7 +11,7 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 
 
-#defining a function named analysis
+#making a function named analysis for displaying graphs
 def analysis(df):
     header = st.container()
     dataset = st.container()
